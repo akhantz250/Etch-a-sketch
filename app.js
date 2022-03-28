@@ -1,6 +1,8 @@
 //variables
 const container = document.querySelector('.container')
 
+const clearBtn = document.querySelector('.remove');
+
 //creates the drawing grid specified by the size
 function createDrawingArea(size){
     for(let i = 0; i < size; i++){
@@ -12,13 +14,19 @@ function createDrawingArea(size){
             const newSquare = document.createElement('div');
             newSquare.classList.add('squares');
             newRow.appendChild(newSquare);
-            newSquare.addEventListener('mouseover',(evt) => {
-                if(evt.buttons == 1){
-                evt.target.style.backgroundColor = 'black'}
-                });
+            newSquare.addEventListener('mouseover',(evt) => 
+                evt.target.style.backgroundColor = 'black');
         }
 
     }
 }
 
+function clearDrawing(){
+    allSquares.forEach(sq => sq.style.backgroundColor = 'white');
+}
+
 createDrawingArea(16);
+
+const allSquares = document.querySelectorAll('.squares');
+clearBtn.addEventListener("click",() => clearDrawing())
+
