@@ -37,7 +37,7 @@ justify-content: flex-start;
 }
 
 .squares{
-    border: 0.01em solid rgb(146, 146, 146);
+    /* border: 0.01em solid rgb(146, 146, 146); */
     flex: 1;
 }
 

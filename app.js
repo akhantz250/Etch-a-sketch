@@ -3,6 +3,10 @@ const container = document.querySelector('.container')
 const clearBtn = document.querySelector('.remove');
 const blackBtn = document.querySelector('.black');
 const rainbowBtn = document.querySelector('.rainbow');
+const grid16 = document.querySelector('.grid16');
+const grid32 = document.querySelector('.grid32');
+const grid64 = document.querySelector('.grid64');
+
 let brushColor = 'black';
 
 //creates the drawing grid specified by the size
@@ -15,21 +19,21 @@ function createDrawingArea(size){
             const newSquare = document.createElement('div');
             newSquare.classList.add('squares');
             newRow.appendChild(newSquare);
-            newSquare.addEventListener('mouseover',(e) => 
-                brush(e));
+            newSquare.addEventListener('mouseover',(e) => {if(e.buttons == 1)
+                brush(e)});
         }
     }
 }
 
 function clearDrawing(){
+    const allSquares = document.querySelectorAll('.squares');
     allSquares.forEach(sq => sq.style.backgroundColor = 'white');
 }
 
+//starting grid 
 createDrawingArea(16);
 
-const allSquares = document.querySelectorAll('.squares');
 clearBtn.addEventListener("click",() => clearDrawing())
-
 
 //changes brush color
 
@@ -68,3 +72,13 @@ function rainbow(){
 
 //add grid size options which removes all squares in the container and draws a new grid with a new size
 
+grid16.addEventListener('click',() => changeGridSize(16));
+grid32.addEventListener('click', () => changeGridSize(32));
+grid64.addEventListener('click', () => changeGridSize(64));
+
+function changeGridSize(size){
+    const rows = document.querySelectorAll('.rows');
+    rows.forEach((row) => container.removeChild(row));
+    createDrawingArea(size);
+    
+}
