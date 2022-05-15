@@ -44,15 +44,18 @@ body{
 .menu{
     align-self: center;
     background-color: dimgray; 
-    width: 40%;
+    width: auto;
     height: 100px;
     margin-top: 60px;
     border-radius: 50px;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     border: 3px solid black;
+    gap: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 .btns{
         font-family: 'Roboto', sans-serif;
