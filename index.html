@@ -1,25 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Etch-a-sketch</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="shortcut icon" href="./pencil.png" type="image/x-icon" />
     <script src="app.js" defer></script>
-</head>
-<body>
-    <div class="header">Etch-a-Sketch</div>
-    <div class="container"></div>
-    <div class="menu">
-        <button class="btns remove">Clear</button>
-        <button class="btns black brush selected">Black</button>
-        <button class="btns color brush">Colour</button>
-        <button class="btns rainbow brush">Rainbow</button>
-        <button class="btns grid16 grid selected">16x16</button>
-        <button class="btns grid32 grid">32x32</button>
-        <button class="btns grid64 grid">64x64</button>
-        <input class='colorpicker' type="color" value="#FF0000"/>
+  </head>
+  <body>
+    <div class="bigwrapper">
+      <div class="header">Etch-a-Sketch</div>
+      <div class="wrapper">
+        <div class="menu">
+          <div class="brush-wrapper">
+            <h2 class="label">Brushes</h2>
+            <button class="btns black brush selected">Black</button>
+            <button class="btns color brush">
+              <div class="color-label">Color</div>
+              <input class="colorpicker" type="color" value="#d97b9a" />
+            </button>
+            <button class="btns rainbow brush">Rainbow</button>
+          </div>
+          <div class="grid-wrapper">
+            <h2 class="label">Grid Size</h2>
+            <div class="grid-size-container">
+              <button class="grid16 grid selected">16</button>
+              <button class="grid32 grid">32</button>
+              <button class="grid64 grid">64</button>
+            </div>
+          </div>
+          <button class="btns remove">Clear</button>
+        </div>
+        <div class="container"></div>
+      </div>
     </div>
-</body>
+  </body>
 </html>

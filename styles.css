@@ -1,79 +1,140 @@
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato&family=Roboto:wght@300;500&display=swap');
-body{
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;800&family=Titan+One&display=swap');
+:root{
+--background: #aad9ff;
+--dark-pink: #d97b9a;
+--border: #949494;
+--button-color: #949494;
+--button-selected: #5f97c4;
+--button-width: 160px;
+--button-height: 48px;
+}
+*{
     margin: 0;
-    display: flex;
-    flex-direction: column;
-    background-color: rgb(219, 35, 72);
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
-
+body{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background);
+    min-height: 100vh;
+}
+.bigwrapper{
+    background-color: var(--dark-pink);
+    border-radius: 24px;
+    padding: 50px 120px;
+}
+.wrapper{
+    display: flex;
+    align-items: center;
+}
 .header{
-    margin: 0px;
-    font-size: 48px;
+    font-size: 64px;
     color: white;
-    font-family: 'Press Start 2P', cursive;
+    font-family: 'Titan One', cursive;
     text-align: center;
-    padding: 30px;
-    margin-bottom: 30px;
+    margin-bottom: 60px;
 }
-
 .container{
-    display: flex;
-    flex-direction: column;
     width: 500px;
     height: 500px;
     background-color: white;
-    align-self: center;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    border: 5px solid black;
+    display: flex;
+    flex-direction: column;
+    border: 5px solid var(--border);
 }
-
 .rows{
     display: flex;
     flex-direction: row;
     flex: 1;
     justify-content: flex-start;
 }
-
 .squares{
-    /* border: 0.01em solid rgb(146, 146, 146); */
     flex: 1;
     user-select: none;
 }
-
 .menu{
-    align-self: center;
-    background-color: dimgray; 
-    width: auto;
-    height: 100px;
-    margin-top: 60px;
-    border-radius: 50px;
+    height: 500px;
+    width: 250px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
+    align-items: flex-start;
+}
+.grid-size-container{
+    display: flex;
+    justify-content: space-between;
+    width: var(--button-width);
+}
+.grid{
+    width: 40px;
+    font-size: 16px;
+}
+.color{
+    position: relative;
+    display: flex;
     align-items: center;
-    border: 3px solid black;
-    gap: 30px;
-    padding-left: 30px;
-    padding-right: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+input[type ='color']{
+    position: absolute;
+    right: 12px;
+    width: 30px;
+    height: 32px;
+    background-color: transparent;
+    border: none;
+}
+.grid{
+    font-size: 16px;
+    width: var(--button-height);
+    height: var(--button-height);
+    font-weight: 500;
+    border: none;
+    background-color: var(--button-color);
+    color: white;
+    border-radius: 4px;
 }
 .btns{
-        font-family: 'Roboto', sans-serif;
-        width: 70px;
-        height: 70px;
-        border: none;
-        border-radius: 50px;
-        border: none;
-        background: rgb(247, 247, 247);
-        color: black; 
-        cursor: pointer;
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
-}
-.btns:hover{
-    background-color: lightgray;
-}
-
-.btns+.selected{
-    background-color: black;
+    background-color: var(--button-color);
+    height: var(--button-height) ;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 500;
+    width: var(--button-width);
+    padding: 10px;
     color: white;
+}
+.brush{
+    margin-bottom: 32px;
+}
+.label{
+    text-align: center;
+    color: white;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+.grid.selected,.btns.selected{
+    background-color: var(--button-selected);
+}
+.color-label{
+    pointer-events: none;
+}
+.btns:hover,.grid:hover{
+    background-color: var(--button-selected);
+}
+button.btns.selected.rainbow{
+    background-image:linear-gradient(to right, #12c2e9,#c471ed,#f64f59);
+}
+.remove{
+    margin-top: 48px;
+}
+button{
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    cursor: pointer;
 }
